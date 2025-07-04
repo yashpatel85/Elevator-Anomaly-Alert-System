@@ -1,0 +1,7 @@
+python version used - 3.8.20
+flask
+streamlit
+pandas 
+sklearn (Isolation Forest)
+matplotlib
+seaborn
