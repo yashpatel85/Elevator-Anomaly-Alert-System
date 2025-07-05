@@ -59,3 +59,137 @@ Elevator-Anomaly-Alert-System/
 | Database | PostgreSQL + SQLAlchemy         |
 | Hosting  | Railway / EC2 (optional)        |
 
+
+# 🚀 API Usage
+
+### ▶️ Endpoint
+
+```
+POST /predict
+```
+
+### 🧾 Request Body (JSON)
+
+```json
+{
+  "vibration_mean": 0.12,
+  "vibration_std": 0.03,
+  "vibration_max": 0.22,
+  "vibration_min": 0.04,
+  "humidity_mean": 35.7,
+  "humidity_std": 1.1,
+  "humidity_max": 38.2,
+  "humidity_min": 33.9,
+  "revolution_mean": 120,
+  "revolution_std": 4,
+  "revolution_max": 125,
+  "revolution_min": 115
+}
+```
+
+### ✅ Response
+
+```json
+{
+  "anomaly_score": -0.256,
+  "is_anomaly": true
+}
+```
+
+---
+
+## 🛠️ Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/Elevator-Anomaly-Alert-System.git
+cd Elevator-Anomaly-Alert-System
+```
+
+### 2. Create a Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # or .\venv\Scripts\activate on Windows
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set Environment Variables
+
+Create a `.env` file in the `src/` folder:
+
+```
+DB_HOST=your-rds-endpoint
+DB_PORT=5432
+DB_NAME=elevator_logs
+DB_USER=your-username
+DB_PASSWORD=your-password
+```
+
+### 5. Run the Application
+
+```bash
+cd src
+flask run
+```
+
+---
+
+## 💻 Running Locally
+
+Once the server is running:
+
+- Send requests via `curl`, Postman, or any HTTP client.
+- Output will be printed in terminal, logged in CSV, and inserted into PostgreSQL.
+
+---
+
+## 🌐 Deployment Ready (Optional)
+
+You can deploy this project on:
+- [Railway](https://railway.app/)
+- [Render](https://render.com/)
+- AWS EC2 + RDS
+
+Make sure your `.env` is configured correctly and add a `Procfile` with:
+
+```
+web: gunicorn src.api:app
+```
+
+---
+
+## 🧪 Sample Curl Request
+
+```bash
+curl -X POST http://localhost:5000/predict \
+-H "Content-Type: application/json" \
+-d @sample_input.json
+```
+
+---
+
+## 📌 Tech Stack
+
+| Layer     | Tools                          |
+|-----------|--------------------------------|
+| Language  | Python 3.9+                    |
+| Backend   | Flask                          |
+| Model     | Isolation Forest (scikit-learn)|
+| Database  | PostgreSQL + SQLAlchemy        |
+| Hosting   | Railway / EC2 (optional)       |
+
+---
+
+## 🧑‍💻 Author
+
+**Yash Patel**
+
+---
+
