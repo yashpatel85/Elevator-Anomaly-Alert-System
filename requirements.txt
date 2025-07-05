@@ -6,3 +6,4 @@ pg8000
 scikit-learn
 numpy
 pandas
+python-dotenv
