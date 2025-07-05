@@ -4,9 +4,10 @@ import os
 import csv
 from .db import SessionLocal, PredictionLog
 
-base_dir = os.path.join(os.path.dirname(__file__), '..', 'model', 'isolation_forest.pkl')
-model_path = os.path.abspath(model_path)
-model = pickle.load(open(model_path, 'rb'))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, 'model', 'isolation_forest.pkl')
+
+model = pickle.load(open(MODEL_PATH, 'rb'))
 
 threshold = -0.15
 
