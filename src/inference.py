@@ -2,7 +2,7 @@ import pickle
 from datetime import datetime
 import os
 import csv
-from db import SessionLocal, PredictionLog
+from .db import SessionLocal, PredictionLog
 
 model = pickle.load(open('model/isolation_forest.pkl', 'rb'))
 
