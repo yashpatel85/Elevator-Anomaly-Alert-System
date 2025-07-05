@@ -4,7 +4,7 @@ import os
 import csv
 from .db import SessionLocal, PredictionLog
 
-model_path = os.path.join(os.path.dirname(__file__), '..', 'model', 'isolation_forest.pkl')
+base_dir = os.path.join(os.path.dirname(__file__), '..', 'model', 'isolation_forest.pkl')
 model_path = os.path.abspath(model_path)
 model = pickle.load(open(model_path, 'rb'))
 
