@@ -9,11 +9,6 @@ required_fields = {
     'revolution_mean', 'revolution_std', 'revolution_max', 'revolution_min',
 } 
 
-@app.route('/', methods=['GET'])
-def home():
-    return jsonify({
-        "message": "✅ Elevator Anomaly Alert System is running. Use POST /predict to submit data."
-    })
 
 @app.route('/predict', methods = ['POST'])
 def predict():
