@@ -24,9 +24,11 @@ def predict():
     result = infer(features, data)
     return jsonify(result)
 
-if __name__ == '__main__':
-    app.run(debug = True)
-
 @app.route('/')
 def index():
     return "🚀 Elevator Anomaly Alert System is running!"
+
+
+if __name__ == '__main__':
+    app.run(debug = True)
+
