@@ -1,7 +1,8 @@
-python version used - 3.8.20
-flask
-streamlit
-pandas 
-sklearn (Isolation Forest)
-matplotlib
-seaborn
+Flask
+gunicorn
+psycopg2-binary
+sqlalchemy
+pg8000
+scikit-learn
+numpy
+pandas
